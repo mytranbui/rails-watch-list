@@ -1,0 +1,12 @@
+<h1>lists</h1>
+<div class="container">
+ <% @lists.each do |list|%>
+  <label class="form-control">
+    <%= link_to list.name, list_path(list) %>
+    <%= link_to "See details", list_path(list), class: "btn btn-primary" %>
+    <%# <%= link_to "Remove",lists_path,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> %>
+  </label>
+<% end %>
+</div>
+<br>
+<%= link_to "Add a new list", new_list_path %>
