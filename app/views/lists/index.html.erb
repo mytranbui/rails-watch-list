@@ -1,12 +1,15 @@
-<h1>lists</h1>
-<div class="container">
- <% @lists.each do |list|%>
-  <label class="form-control">
-    <%= link_to list.name, list_path(list) %>
-    <%= link_to "See details", list_path(list), class: "btn btn-primary" %>
-    <%# <%= link_to "Remove",lists_path,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> %>
-  </label>
-<% end %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media4.giphy.com/media/EqjqXkrEb9XNEJam1A/giphy.gif)">
+  <div class="container">
+    <h1 class="p-500">WatchList</h1>
+  </div>
 </div>
-<br>
-<%= link_to "Add a new list", new_list_path %>
+<div class="container">
+  <h1>My lists</h1>
+  <div class="cards">
+    <% @lists.each do |list|%>
+    <div class="card-category h-120" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://25.media.tumblr.com/b6aa090c8a349c6cd1aa48a46130a7db/tumblr_mfvbonvHeM1s00iyvo1_400.gif)">
+      <div class="button"><%= link_to list.name, list_path(list), class: "nav-link" %></div>
+    </div>
+    <% end %>
+  </div>
+</div>
