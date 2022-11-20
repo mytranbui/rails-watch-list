@@ -17,6 +17,6 @@ movies = JSON.parse(movies_serialized)
 
 puts "Creating movies..."
 movies["results"].each do |m|
-  Movie.create(title: m["title"], overview: m["overview"], poster_url: url+m["poster_path"], rating: m["vote_average"])
+  Movie.create(title: m["title"], overview: m["overview"], poster_url: "#{url}+#{m["poster_path"]}", rating: m["vote_average"])
 end
 puts "Seeding Finished!"

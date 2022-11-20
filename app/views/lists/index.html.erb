@@ -7,9 +7,10 @@
   <h1>My lists</h1>
   <div class="cards">
     <% @lists.each do |list|%>
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-category h-120" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://25.media.tumblr.com/b6aa090c8a349c6cd1aa48a46130a7db/tumblr_mfvbonvHeM1s00iyvo1_400.gif)">
       <div class="button"><%= link_to list.name, list_path(list), class: "nav-link" %></div>
+    <%# <div class="red-text"><%= link_to "Remove",bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div> %>
     </div>
     <% end %>
   </div>
-</div>
